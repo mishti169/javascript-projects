@@ -1,0 +1,20 @@
+body {
+  background-color: rgb(189, 189, 189);
+}
+
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.btn {
+  padding: 10px;
+  font-size: large;
+  border-radius: 20px;
+  border: 2px solid rgb(45, 78, 116);
+  /* background-color: pink; */
+  color: rgb(50, 42, 71);
+}
