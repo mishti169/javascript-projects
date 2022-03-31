@@ -1,0 +1,6 @@
+body {
+  box-sizing: border-box;
+  background: url(https://js-beginners.github.io/counter-project/img/mainBcg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
