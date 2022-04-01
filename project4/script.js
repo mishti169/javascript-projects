@@ -46,10 +46,10 @@ function handleCount(event) {
   valueTag.innerText = ans;
 
   if (ans > 0) {
-    valueTag.style.color = 'green';
+    valueTag.style.color = '#008000';
   } else if (ans < 0) {
-    valueTag.style.color = 'red';
+    valueTag.style.color = '#ff0000';
   } else {
-    valueTag.style.color = 'black';
+    valueTag.style.color = ' #333333';
   }
 }
