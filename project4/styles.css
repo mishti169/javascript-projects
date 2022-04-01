@@ -8,7 +8,9 @@ body {
   /* margin: auto; */
 }
 .counter-wrapper {
-  padding: 6%;
+  /* display: flex;
+    justify-content: center;
+    flex-direction: column; */
 }
 .counter-wrapper__ele {
   border: 1px solid rgb(255, 255, 255);
@@ -16,7 +18,7 @@ body {
   text-align: center;
   letter-spacing: 2px;
   box-shadow: rgba(0, 0, 0, 0.9) 0px 3.2px 8px 0px;
-  padding: 10% 5%;
+  /* padding: 5% 8%; */
 }
 .counter-wrapper__ele__item {
   font-size: 40px;
@@ -27,6 +29,8 @@ body {
   height: auto;
   color: #333333;
   font-weight: 500;
+  font-size: 160px;
+  margin: auto;
 }
 .btn-wrapper {
   display: flex;
