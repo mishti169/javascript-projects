@@ -3,3 +3,18 @@ body {
   background-color: #fcf3f0;
   margin: 0;
 }
+header{
+  padding: 15px;
+}
+main{
+  display: flex;
+}
+figure {
+  margin: 0;
+}
+.indridents-wrapper{
+  display: flex;
+}
+.list-decor{
+  list-style: none;
+}
