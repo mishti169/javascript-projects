@@ -1,20 +1,101 @@
 body {
   box-sizing: border-box;
-  background-color: #fcf3f0;
+  background-color: #00afc1;
   margin: 0;
-}
-header{
-  padding: 15px;
-}
-main{
   display: flex;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+}
+.page-container {
+  background-color: #006778;
+  width: 100%;
+  height: auto;
+  max-width: 80%;
+  min-width: 300px;
+}
+header {
+  /* padding: 15px; */
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+}
+.searchBox {
+  padding: 16px;
+  border-radius: 20px;
+  border: none;
+  font-weight: 600;
+}
+.searchBox::placeholder {
+  color: lightgray;
+}
+.searchBox:focus-visible {
+  outline: none;
+}
+.btn-search {
+  padding: 16px;
+  border-radius: 20px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #ffd124;
+  color: #006778;
+}
+main {
+  display: flex;
+}
+.recipe-item {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  padding: 12px;
+  font-weight: 500;
+  color: #ffd124;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.recipe-item:hover {
+  /* background-color: #0093AB; */
+  /* border: 1px solid #ffd124; */
+  box-shadow: 0 0 0 2px #ffd124;
+  border-radius: 14px;
+}
+.img-item {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
 }
 figure {
   margin: 0;
 }
-.indridents-wrapper{
+.recipe-container {
+}
+.current-recipe-img {
+  width: 100%;
+  border: 1px solid red;
+  height: 300px;
+  background-image: url('https://st2.depositphotos.com/5653638/11508/i/950/depositphotos_115086216-stock-photo-pani-puri-or-panipuri-golgappe.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.recipe-title {
+  padding: 10px;
+  background-color: #ffd124;
+  color: #006778;
+  font-weight: 600;
+  font-size: 28px;
+  max-width: 250px;
+  text-align: center;
+}
+.indridents-wrapper {
   display: flex;
 }
-.list-decor{
+.list-decor {
   list-style: none;
+}
+aside > div {
+  /* background-color: aqua; */
 }
