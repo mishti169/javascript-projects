@@ -35,7 +35,7 @@ async function getRecipeList() {
   }
 }
 
-function currentRecipeItem(event) {
+async function currentRecipeItem(event) {
   const selectedRecipeItem = data.find(function (currentItem) {
     return selectedRecipe(currentItem, +event.currentTarget.id);
   });
@@ -44,7 +44,13 @@ function currentRecipeItem(event) {
 
   const recipeImg = document.querySelector('.current-recipe-img');
   recipeImg.style.backgroundImage = `url(${selectedRecipeItem.image})`;
-  const ingredients = {
+  const resAns = await fetch(
+    `https://api.spoonacular.com/recipes/${selectedRecipeItem.id}/ingredientWidget.json?apiKey=a9cb54be8fd147b9b9688cb748ee4617`
+  );
+
+  const ingredientsRes = await resAns.json();
+
+  const ingredientsRes1 = {
     ingredients: [
       {
         name: 'cheese',
@@ -104,6 +110,17 @@ function currentRecipeItem(event) {
       },
     ],
   };
+  const ingredientList = document.querySelector('.ingridients-list');
+  let ans = '';
+  for (let i = 0; i < ingredientsRes.ingredients.length; i++) {
+    ans =
+      ans +
+      `<li class="list-decor">
+  <i class="fa-solid fa-square-check icon"></i>
+  <span class="ingredient">${ingredientsRes.ingredients[i].name}</span>
+</li>`;
+  }
+  ingredientList.innerHTML = ans;
 }
 
 function selectedRecipe(currentItem, id) {
