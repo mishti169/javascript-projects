@@ -9,7 +9,8 @@ body {
 .page-container {
   background-color: #006778;
   /* width: 100%; */
-  height: auto;
+  height: 600px;
+  overflow: hidden;
   max-width: 800px;
   min-width: 300px;
 }
@@ -18,12 +19,14 @@ header {
   display: flex;
   justify-content: center;
   column-gap: 10px;
+  height: 50px;
 }
 .searchBox {
   padding: 16px;
   border-radius: 20px;
   border: none;
   font-weight: 600;
+  text-overflow: ellipsis;
 }
 .searchBox::placeholder {
   color: lightgray;
@@ -41,7 +44,13 @@ header {
   color: #006778;
 }
 main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 34% 66%;
+  height: calc(100% - 50px);
+}
+.recipe-list-wrapper {
+  height: 100%;
+  overflow-y: scroll;
 }
 .recipe-item {
   display: flex;
@@ -91,6 +100,8 @@ figure {
   font-size: 28px;
   max-width: 250px;
   text-align: center;
+  /* transform: scaleX(); */
+  /* transform: rotateY(60deg); */
 }
 .ingredients-wrapper {
 }
@@ -113,7 +124,7 @@ figure {
 .ingredient {
   line-height: 20px;
   font-size: 18px;
-  color: white;
+  color: #ffd124;
 }
 aside > div {
   /* background-color: aqua; */
