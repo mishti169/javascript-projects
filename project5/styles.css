@@ -1,47 +1,63 @@
 body {
   box-sizing: border-box;
-  background-color: #00afc1;
+  background-image: linear-gradient(to right bottom, #ffd124, #00afc1);
   margin: 0;
   display: flex;
   justify-content: center;
   font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 .page-container {
   background-color: #006778;
-  /* width: 100%; */
-  height: 600px;
-  overflow: hidden;
-  /* max-width: 800px; */
+  min-height: 920px;
   width: 1000px;
+  margin: 60px 0;
+  border-radius: 10px;
+  padding: 30px 0;
 }
 header {
-  /* padding: 15px; */
+  padding-bottom: 30px;
   display: flex;
   justify-content: center;
   column-gap: 10px;
   height: 50px;
 }
 .searchBox {
-  padding: 16px;
-  border-radius: 20px;
+  padding: 0px 16px;
+  border-radius: 40px;
   border: none;
-  font-weight: 600;
+  font-weight: 500;
   text-overflow: ellipsis;
+  min-width: 50%;
+  font-size: 16px;
+  letter-spacing: 1.2;
+  line-height: 16px;
+  color: #006778;
+  transition: all ease 0.3s;
 }
 .searchBox::placeholder {
   color: lightgray;
 }
 .searchBox:focus-visible {
   outline: none;
+  box-shadow: #fff 0px 2px 8px 0px;
 }
 .btn-search {
   padding: 16px;
-  border-radius: 20px;
+  border-radius: 40px;
   border: none;
   text-transform: uppercase;
   font-weight: 600;
-  background-color: #ffd124;
-  color: #006778;
+  background-image: linear-gradient(to right bottom, #ffd124, #00afc1);
+  color: #ffffff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 1.3;
+  margin-left: -130px;
+  cursor: pointer;
 }
 main {
   display: grid;
@@ -50,8 +66,10 @@ main {
 }
 .recipe-list-wrapper {
   height: 100%;
-  overflow-y: scroll;
+  padding: 0 30px;
+  border: 1px solid red;
 }
+
 .recipe-item {
   display: flex;
   align-items: center;
@@ -61,12 +79,12 @@ main {
   color: #ffd124;
   cursor: pointer;
   transition: all ease 0.3s;
+  border-radius: 40px;
 }
 .recipe-item:hover {
-  /* background-color: #0093AB; */
-  /* border: 1px solid #ffd124; */
-  box-shadow: 0 0 0 2px #ffd124;
-  border-radius: 14px;
+  transform: translateY(-4px);
+  box-shadow: #fff 0px 2px 5px 0px;
+  border-radius: 40px;
 }
 .img-item {
   height: 60px;
@@ -82,15 +100,25 @@ figure {
 }
 .current-recipe-img {
   width: 100%;
-  border: 1px solid red;
   height: 300px;
-  /* background-image: url('https://st2.depositphotos.com/5653638/11508/i/950/depositphotos_115086216-stock-photo-pani-puri-or-panipuri-golgappe.jpg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  position: relative;
+}
+.current-recipe-img::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right bottom, #ffd124, #00afc1);
+  opacity: 0.5;
 }
 .recipe-title {
   padding: 10px;
@@ -100,8 +128,6 @@ figure {
   font-size: 28px;
   max-width: 250px;
   text-align: center;
-  /* transform: scaleX(); */
-  /* transform: rotateY(60deg); */
 }
 .ingredients-wrapper {
 }
@@ -118,14 +144,12 @@ figure {
   /* border: 1px solid red; */
 }
 .icon {
-  font-size: 20px;
-  color: #00afc1;
+  font-size: 16px;
+  color: #ffffff;
+  min-width: 20px;
 }
 .ingredient {
   line-height: 20px;
   font-size: 18px;
   color: #ffd124;
-}
-aside > div {
-  /* background-color: aqua; */
 }
