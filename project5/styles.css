@@ -71,6 +71,7 @@ main {
   height: 100%;
   background-color: #ffffff;
   padding: 0 30px;
+  border-radius: 0 0 0 6px;
 }
 
 .recipe-item {
@@ -102,6 +103,7 @@ figure {
 .recipe-container {
   background-color: #f2efee;
   width: 100%;
+  border-radius: 0 0 6px 0;
 }
 .current-recipe-img {
   width: 100%;
