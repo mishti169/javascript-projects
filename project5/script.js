@@ -5,13 +5,13 @@ searchBtn.addEventListener('click', getRecipeList);
 let data = [];
 async function getRecipeList() {
   const searchBox = document.querySelector('#searchBox');
-  // const res = await fetch(
-  //   'https://api.spoonacular.com/recipes/complexSearch?query=' +
-  //     searchBox.value +
-  //     '&number=6&apiKey=a9cb54be8fd147b9b9688cb748ee4617'
-  // );
-  // data = (await res.json()).results;
-  data = [
+  const res = await fetch(
+    'https://api.spoonacular.com/recipes/search?query=' +
+      searchBox.value +
+      '&apiKey=a9cb54be8fd147b9b9688cb748ee4617'
+  );
+  data = (await res.json()).results;
+  data1 = [
     {
       id: 749013,
       title: 'Pasta',
