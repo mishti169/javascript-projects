@@ -10,69 +10,8 @@ async function getRecipeList() {
       searchBox.value +
       '&apiKey=a9cb54be8fd147b9b9688cb748ee4617'
   );
-  data = (await res.json()).results;
-  data1 = [
-    {
-      id: 749013,
-      title: 'Pasta',
-      image: 'https://spoonacular.com/recipeImages/749013-312x231.jpeg',
-      imageType: 'jpeg',
-    },
-    {
-      id: 358073,
-      title: 'Pasta',
-      image: 'https://spoonacular.com/recipeImages/358073-312x231.jpeg',
-      imageType: 'jpeg',
-    },
-    {
-      id: 450759,
-      title: 'Pasta Pie',
-      image: 'https://spoonacular.com/recipeImages/450759-312x231.jpg',
-      imageType: 'jpg',
-    },
-    {
-      id: 532245,
-      title: 'Pasta Bake',
-      image: 'https://spoonacular.com/recipeImages/532245-312x231.jpg',
-      imageType: 'jpg',
-    },
-    {
-      id: 376941,
-      title: 'Pasta Rosa',
-      image: 'https://spoonacular.com/recipeImages/376941-312x231.jpeg',
-      imageType: 'jpeg',
-    },
-    {
-      id: 603414,
-      title: 'Pasta Mama',
-      image: 'https://spoonacular.com/recipeImages/603414-312x231.jpg',
-      imageType: 'jpg',
-    },
-    {
-      id: 602638,
-      title: 'Pasta Nest',
-      image: 'https://spoonacular.com/recipeImages/602638-312x231.jpg',
-      imageType: 'jpg',
-    },
-    {
-      id: 1091174,
-      title: 'Pasta sauce',
-      image: 'https://spoonacular.com/recipeImages/1091174-312x231.jpg',
-      imageType: 'jpg',
-    },
-    {
-      id: 139415,
-      title: 'Pasta Fazul',
-      image: 'https://spoonacular.com/recipeImages/139415-312x231.jpg',
-      imageType: 'jpg',
-    },
-    {
-      id: 123267,
-      title: 'Pasta Salad',
-      image: 'https://spoonacular.com/recipeImages/123267-312x231.jpg',
-      imageType: 'jpg',
-    },
-  ];
+  //api.spoonacular.com/recipes/complexSearch?query=panipuri&apiKey=a9cb54be8fd147b9b9688cb748ee4617
+  https: data = (await res.json()).results;
 
   const wrapper = document.querySelector('.recipe-list-wrapper');
 
@@ -82,7 +21,7 @@ async function getRecipeList() {
     finalCount =
       finalCount +
       `<div class="recipe-item" id=${data[i].id}><img class="img-item" 
-    src=${data[i].image} alt=""/><span>${data[i].title}</span></div>`;
+    src="https://spoonacular.com/recipeImages/${data[i].id}-240x150.jpg" alt="${data[i].title}"/><span>${data[i].title}</span></div>`;
   }
 
   wrapper.innerHTML = finalCount;
@@ -105,17 +44,18 @@ async function currentRecipeItem(event) {
   recipeTitle.innerText = selectedRecipeItem.title;
 
   const recipeImg = document.querySelector('.current-recipe-img');
-  recipeImg.style.backgroundImage = `url(${selectedRecipeItem.image.replace(
-    '312x231',
-    '636x393'
-  )})`;
-  // const resAns = await fetch(
-  //   `https://api.spoonacular.com/recipes/${selectedRecipeItem.id}/ingredientWidget.json?apiKey=a9cb54be8fd147b9b9688cb748ee4617`
-  // );
+  recipeImg.style.backgroundImage = `url("https://spoonacular.com/recipeImages/${selectedRecipeItem.id}-636x393.jpg")`;
+  // recipeImg.style.backgroundImage = `url("${selectedRecipeItem.id.replace(
+  //   '312x231',
+  //   '636x393'
+  // )}")`;
+  const resAns = await fetch(
+    `https://api.spoonacular.com/recipes/${selectedRecipeItem.id}/ingredientWidget.json?apiKey=a9cb54be8fd147b9b9688cb748ee4617`
+  );
 
-  // const ingredientsRes = await resAns.json();
+  const ingredientsRes = await resAns.json();
 
-  const ingredientsRes = {
+  const ingredientsRes1 = {
     ingredients: [
       {
         name: 'cheese',

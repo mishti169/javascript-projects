@@ -7,13 +7,14 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   overflow: hidden;
   overflow-y: scroll;
+  color: #655a56;
 }
 .page-container {
   background-color: #f9f5f3;
   min-height: 920px;
   width: 1000px;
   margin: 60px 0;
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 30px 0;
 }
 header {
@@ -37,14 +38,16 @@ header {
   transition: all ease 0.3s;
 }
 .searchBox::placeholder {
-  color: lightgray;
+  color: #e6ded9;
+  font-size: 18px;
+  font-weight: 500;
 }
 .searchBox:focus-visible {
   outline: none;
   box-shadow: #fff 0px 2px 8px 0px;
 }
 .btn-search {
-  padding: 16px;
+  padding: 26px;
   border-radius: 40px;
   border: none;
   text-transform: uppercase;
@@ -66,6 +69,7 @@ main {
 }
 .recipe-list-wrapper {
   height: 100%;
+  background-color: #ffffff;
   padding: 0 30px;
 }
 
@@ -96,7 +100,7 @@ figure {
   margin: 0;
 }
 .recipe-container {
-  /* border: 1px solid; */
+  background-color: #f2efee;
   width: 100%;
 }
 .current-recipe-img {
@@ -119,19 +123,33 @@ figure {
   top: 0;
   left: 0;
   background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
-  opacity: 0.5;
+  opacity: 0.6;
 }
-.recipe-title {
-  padding: 10px;
-  background-color: #ffd124;
-  color: #006778;
-  font-weight: 600;
-  font-size: 28px;
-  max-width: 250px;
+.recipe-title-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 20%) skewY(-6deg);
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  max-width: 70%;
+  line-height: 1.95;
   text-align: center;
 }
-.ingredients-wrapper {
+
+.recipe-title {
+  padding: 8px;
+  background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
+
+.ingredients-wrapper {
+  margin-top: 50px;
+}
+
 .ingridients-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -142,15 +160,19 @@ figure {
   list-style: none;
   display: flex;
   column-gap: 10px;
-  /* border: 1px solid red; */
 }
+
 .icon {
   font-size: 16px;
-  color: #ffffff;
+  color: #f59a83;
   min-width: 20px;
+}
+.search-icon {
+  color: #ffffff;
 }
 .ingredient {
   line-height: 20px;
-  font-size: 18px;
-  color: #ffd124;
+  font-size: 14px;
+  color: #655a56;
+  font-weight: 400;
 }
